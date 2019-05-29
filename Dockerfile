@@ -13,8 +13,8 @@ RUN apk --no-cache add nginx \
         php7-xml php7-openssl \
         php7-zlib php7-json php7-zip
 
-ADD app.conf /etc/nginx/conf.d/app.conf
-ADD index.php /var/www/html/index.php
+ADD config/app.conf /etc/nginx/conf.d/app.conf
+ADD app/index.php /var/www/html/index.php
 
 RUN rm -f /etc/nginx/conf.d/default.conf && mkdir -p /run/nginx && chown -R nginx:nginx /var/www/html
 
